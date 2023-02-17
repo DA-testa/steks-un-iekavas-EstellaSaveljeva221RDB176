@@ -29,14 +29,14 @@ def main():
         with open(fname,"r") as mfile:
             text = mfile.read()
             mismatch = find_mismatch(text)
-            if mismatch == 'Success':
+            if mismatch == None:
                 print("Success")
             else:
                 print(mismatch)
     elif text == "I":
         text = input()
         mismatch = find_mismatch(text)
-        if mismatch == 'Success':
+        if mismatch == None:
                 print("Success")
         else:
                 print(mismatch)
