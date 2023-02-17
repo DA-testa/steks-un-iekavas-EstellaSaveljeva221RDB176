@@ -33,7 +33,7 @@ def main():
     else:
         text = input().strip
         mismatch = find_mismatch(text)
-         print(mismatch)
+        print(mismatch)
 
 if __name__ == "__main__":
     main()
