@@ -23,9 +23,9 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position + 1
     return "Success"
 
-    def main():
+def main():
     print("Use an input to choose files or input - F or I (Capital i) ")
-    text = input("-> ")
+    text = input("-> ").upper()
     if text =="F":
         fname = input("Input file name ")
         with open(fname,"r") as mfile:
@@ -33,10 +33,7 @@ def find_mismatch(text):
     else:
         text = input().strip
         mismatch = find_mismatch(text)
-        if mismatch == None:
-                print("Success")
-        else:
-                print(mismatch)
+         print(mismatch)
 
 if __name__ == "__main__":
     main()
