@@ -4,10 +4,10 @@ from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
 
-def are_matching(left, right):
+    def are_matching(left, right):
     return (left + right) in ["()", "[]", "{}"]
 
-def find_mismatch(text):
+    def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
@@ -23,7 +23,7 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position + 1
     return "Success"
 
-def main():
+    def main():
     print("Use an input to choose files or input - F or I (Capital i) ")
     text = input("-> ")
     if text =="F":
