@@ -13,35 +13,30 @@ def find_mismatch(text):
         if next in "([{":
             opening_brackets_stack.append(Bracket(next, i))
             pass
-
         if next in ")]}":
             if not opening_brackets_stack:
                 return i+1
             if not are_matching (opening_brackets_stack.pop().char, next):
                 return i+1
             pass
+    if opening_brackets_stack:
+        return opening_brackets_stack[0].position + 1
+    return "Success"
 
 def main():
     print("Use an input to choose files or input - F or I (Capital i) ")
-    text = input("F or I?")
+    text = input("-> ")
     if text =="F":
         fname = input("Input file name ")
         with open(fname,"r") as mfile:
-            text = mfile.read()
-            mismatch = find_mismatch(text)
-            if mismatch == None:
-                print("Success")
-            else:
-                print(mismatch)
-    elif text == "I":
-        text = input()
+            text = mfile.read().strip
+    else:
+        text = input().strip
         mismatch = find_mismatch(text)
         if mismatch == None:
                 print("Success")
         else:
                 print(mismatch)
-    else:
-         print("wrong input")
 
 if __name__ == "__main__":
     main()
